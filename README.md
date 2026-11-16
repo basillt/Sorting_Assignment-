@@ -1,8 +1,17 @@
-# Sorting_Assignment
+# Sorting Algorithms: Runtime Comparison
 
-**Student Name(s):**
-* DEMA MOHAMED - 212931380
-* BASIL TAHA - 214656852
+Bubble Sort, Merge Sort and Quick Sort timed on random and nearly-sorted arrays of growing size.
+
+**Authors:** Dema Mohamed, Basil Taha
+
+## Run
+
+```bash
+pip install numpy matplotlib
+python run_experiments.py                      # random arrays + nearly sorted (5% noise)
+python run_experiments.py -e 2 -r 10           # 20% noise, 10 repetitions
+python run_experiments.py -s 100 1000 5000     # custom array sizes
+```
 
 ## Chosen Algorithms
 
@@ -16,16 +25,16 @@ For this assignment, I chose to focus on three different sorting algorithms to d
 
 ## Experiment Results
 
-### result1.png: Sorting Algorithm Comparison (Random Arrays)
+### Random arrays
 
-result1.png
+![Runtime on random arrays](result1.png)
 
 In this graph, we see how the three chosen algorithms handle arrays filled with random numbers. It's clear that Bubble Sort is the slowest – as the array size increases, its running time jumps dramatically. This is exactly what we expected from an algorithm with O(n^2) complexity. In contrast, Merge Sort and Quick Sort are much faster and more efficient. Their running times increase more moderately, consistent with their O(n log n) complexity. This graph shows us how important it is to choose the right algorithm when working with large amounts of data.
 
-### result2.png: Sorting Algorithm Comparison (Nearly Sorted Arrays, with 5% Noise)
+### Nearly sorted arrays (5% noise)
 
-result2.png
+![Runtime on nearly sorted arrays](result2.png)
 
- The second graph presents a slightly different scenario: what happens when the array is already almost sorted, with only a small amount of "noise" (in this case, 5% of elements swapped randomly)? Here, we see that Bubble Sort is still slow, but perhaps slightly less so than with completely random arrays. Merge Sort and Quick Sort continue to be fast and efficient, almost to the same extent as with random arrays. This shows that they are not overly affected by the initial order of the data, as long as the noise is small. This highlights their strength as general-purpose and effective algorithms for most situations.
+The second graph presents a slightly different scenario: what happens when the array is already almost sorted, with only a small amount of "noise" (in this case, 5% of elements swapped randomly)? Here, we see that Bubble Sort is still slow, but perhaps slightly less so than with completely random arrays. Merge Sort and Quick Sort continue to be fast and efficient, almost to the same extent as with random arrays. This shows that they are not overly affected by the initial order of the data, as long as the noise is small. This highlights their strength as general-purpose and effective algorithms for most situations.
 
 In summary, these experiments help us understand not only how each algorithm works, but also when to use it, and how the type of data can influence its actual performance.
